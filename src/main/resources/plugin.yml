@@ -1,0 +1,4 @@
+name: obm_plugin
+version: '${project.version}'
+main: illia.kai.obm_plugin.Obm_plugin
+api-version: '1.20'

@@ -64,10 +64,14 @@ public class Events implements Listener {
     }
 
     private void changeSkeletonEquipment(Skeleton monster, Player player) {
-        // 1 : 4
-        int chanceOfGettingAnArmor = 4;
+        // 1 : 2
+        int chanceOfGettingAnArmor = 2;
         Random random = new Random();
         int playerMaterialChance = this.getPlayerMaterialChance(player);
+
+        if (playerMaterialChance <= 0)
+            playerMaterialChance = 1;
+
         LOGGER.log(Level.WARNING, "PlayerMaterialChance: {0}", playerMaterialChance);
 
         // helmet
@@ -75,8 +79,10 @@ public class Events implements Listener {
             LOGGER.log(Level.WARNING, "Armor");
             int materialChance = random.nextInt(playerMaterialChance)+1;
             LOGGER.log(Level.WARNING, "materialChance: {0}", materialChance);
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setHelmet(new ItemStack(Material.NETHERITE_HELMET));
+                monster.getEquipment().setHelmetDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setHelmet(new ItemStack(Material.DIAMOND_HELMET));
@@ -90,7 +96,7 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setHelmet(new ItemStack(Material.CHAINMAIL_HELMET));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setHelmet(new ItemStack(Material.LEATHER_HELMET));
         }
 
@@ -99,8 +105,10 @@ public class Events implements Listener {
             LOGGER.log(Level.WARNING, "Armor");
             int materialChance = random.nextInt(playerMaterialChance)+1;
             LOGGER.log(Level.WARNING, "materialChance: {0}", materialChance);
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setChestplate(new ItemStack(Material.NETHERITE_CHESTPLATE));
+                monster.getEquipment().setChestplateDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setChestplate(new ItemStack(Material.DIAMOND_CHESTPLATE));
@@ -114,7 +122,7 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setChestplate(new ItemStack(Material.CHAINMAIL_CHESTPLATE));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
         }
 
@@ -123,8 +131,10 @@ public class Events implements Listener {
             LOGGER.log(Level.WARNING, "Armor");
             int materialChance = random.nextInt(playerMaterialChance)+1;
             LOGGER.log(Level.WARNING, "materialChance: {0}", materialChance);
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setLeggings(new ItemStack(Material.NETHERITE_LEGGINGS));
+                monster.getEquipment().setLeggingsDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setLeggings(new ItemStack(Material.DIAMOND_LEGGINGS));
@@ -138,7 +148,7 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setLeggings(new ItemStack(Material.CHAINMAIL_LEGGINGS));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
         }
 
@@ -147,8 +157,10 @@ public class Events implements Listener {
             LOGGER.log(Level.WARNING, "Armor");
             int materialChance = random.nextInt(playerMaterialChance)+1;
             LOGGER.log(Level.WARNING, "materialChance: {0}", materialChance);
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setBoots(new ItemStack(Material.NETHERITE_BOOTS));
+                monster.getEquipment().setBootsDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setBoots(new ItemStack(Material.DIAMOND_BOOTS));
@@ -162,22 +174,29 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setBoots(new ItemStack(Material.CHAINMAIL_BOOTS));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
         }
     }
 
     private void changeZombieEquipment(Zombie monster, Player player) {
-        // 1 : 4
-        int chanceOfGettingAnArmor = 4;
+        // 1 : 2
+        int chanceOfGettingAnArmor = 2;
         Random random = new Random();
         int playerMaterialChance = this.getPlayerMaterialChance(player);
+
+        if (playerMaterialChance <= 0)
+            playerMaterialChance = 1;
+
+        LOGGER.log(Level.WARNING, "PlayerMaterialChance: {0}", playerMaterialChance);
 
         // helmet
         if(random.nextInt(chanceOfGettingAnArmor)+1 == 1){
             int materialChance = random.nextInt(playerMaterialChance)+1;
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setHelmet(new ItemStack(Material.NETHERITE_HELMET));
+                monster.getEquipment().setHelmetDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setHelmet(new ItemStack(Material.DIAMOND_HELMET));
@@ -191,15 +210,17 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setHelmet(new ItemStack(Material.CHAINMAIL_HELMET));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setHelmet(new ItemStack(Material.LEATHER_HELMET));
         }
 
         // ChestPlate
         if(random.nextInt(chanceOfGettingAnArmor)+1 == 1){
             int materialChance = random.nextInt(playerMaterialChance)+1;
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setChestplate(new ItemStack(Material.NETHERITE_CHESTPLATE));
+                monster.getEquipment().setChestplateDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setChestplate(new ItemStack(Material.DIAMOND_CHESTPLATE));
@@ -213,15 +234,17 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setChestplate(new ItemStack(Material.CHAINMAIL_CHESTPLATE));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
         }
 
         // LEGGINGS
         if(random.nextInt(chanceOfGettingAnArmor)+1 == 1){
             int materialChance = random.nextInt(playerMaterialChance)+1;
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setLeggings(new ItemStack(Material.NETHERITE_LEGGINGS));
+                monster.getEquipment().setLeggingsDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setLeggings(new ItemStack(Material.DIAMOND_LEGGINGS));
@@ -235,15 +258,17 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setLeggings(new ItemStack(Material.CHAINMAIL_LEGGINGS));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
         }
 
         // boots
         if(random.nextInt(chanceOfGettingAnArmor)+1 == 1){
             int materialChance = random.nextInt(playerMaterialChance)+1;
-            if(materialChance <= 1)
+            if(materialChance <= 1) {
                 monster.getEquipment().setBoots(new ItemStack(Material.NETHERITE_BOOTS));
+                monster.getEquipment().setBootsDropChance(0);
+            }
 
             else if (materialChance <= 10)
                 monster.getEquipment().setBoots(new ItemStack(Material.DIAMOND_BOOTS));
@@ -257,7 +282,7 @@ public class Events implements Listener {
             else if (materialChance <= 25)
                 monster.getEquipment().setBoots(new ItemStack(Material.CHAINMAIL_BOOTS));
 
-            else if (materialChance <= 50)
+            else
                 monster.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
         }
     }

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>illia.kai</groupId>
-    <artifactId>obm_plugin</artifactId>
+    <artifactId>equipment_balancing_spigot</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 

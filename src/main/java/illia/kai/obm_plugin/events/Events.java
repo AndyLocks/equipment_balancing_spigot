@@ -339,6 +339,9 @@ public class Events implements Listener {
                     case NETHERITE_BOOTS:
                         chance -= 4;
                         break;
+
+                    default:
+                        break;
                 }
             }
 

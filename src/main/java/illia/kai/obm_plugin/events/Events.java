@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
@@ -29,13 +30,19 @@ public class Events implements Listener {
         if (event.getEntity() instanceof Skeleton || event.getEntity() instanceof Zombie) {
             LOGGER.fine("EntitySpawnEvent");
             Monster monster = (Monster) event.getEntity();
-            Player nearbyPlayer = (Player) monster.getWorld().getNearbyEntities(
-                    monster.getLocation(),
-                    1000,
-                    1000,
-                    1000,
-                    (entity -> entity instanceof Player)
-            ).stream().findFirst().get();
+            Player nearbyPlayer;
+            try {
+                nearbyPlayer = (Player) monster.getWorld().getNearbyEntities(
+                        monster.getLocation(),
+                        1000,
+                        1000,
+                        1000,
+                        (entity -> entity instanceof Player)
+                ).stream().findFirst().get();
+            }
+            catch (NoSuchElementException e) {
+                return;
+            }
             LOGGER.log(Level.FINE, "Player: {0}", nearbyPlayer.getDisplayName());
             LOGGER.log(Level.FINE, "Monster: {0}", monster.getName());
 

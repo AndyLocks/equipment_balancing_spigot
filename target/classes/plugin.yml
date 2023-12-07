@@ -1,4 +1,4 @@
-name: obm_plugin
+name: equipment_balancing_spigot
 version: '1.0'
 main: illia.kai.obm_plugin.Obm_plugin
 api-version: '1.20'

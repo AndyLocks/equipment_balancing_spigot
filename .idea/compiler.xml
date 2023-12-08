@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="obm_plugin" />
+        <module name="equipment_balancing_spigot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="obm_plugin" target="9" />
+    </bytecodeTargetLevel>
   </component>
 </project>

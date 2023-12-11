@@ -66,7 +66,7 @@ ___
 ### How to install?
 [How to install plugins.](https://bukkit.fandom.com/wiki/Installing_Plugins)
 #### Where to get the plugin?
-`original-overeating_system-*.*.jar ` file in:
+`original-equipment_balancing_spigot-*.*.jar ` file in:
 
 [![Static Badge](https://img.shields.io/badge/Releases-gray?style=for-the-badge&logo=github&label=Git&labelColor=black)](https://github.com/AndyLocks/equipment_balancing_spigot/releases)
 [![Static Badge](https://img.shields.io/badge/target-gray?style=for-the-badge&logo=github&label=Git&labelColor=black)](https://github.com/AndyLocks/equipment_balancing_spigot/tree/master/target) 

@@ -61,6 +61,7 @@ Force is determined by :
     <img height=200 src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fd/Plains_Zombie_Villager_Base.png/revision/latest/scale-to-width-down/333?cb=20211013222051">
 </span>
 </p>
+
 ___
 ### How to install?
 [How to install plugins.](https://bukkit.fandom.com/wiki/Installing_Plugins)

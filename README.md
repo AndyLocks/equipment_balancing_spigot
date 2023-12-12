@@ -1,5 +1,9 @@
 <p align="center">
     <a href="https://github.com/AndyLocks/equipment_balancing_spigot/releases"><img src="https://img.shields.io/badge/Releases-gray?style=for-the-badge&logo=github&label=Git&labelColor=black"></a>
+    </span>
+    <span>
+    <a href="https://github.com/AndyLocks/equipment_balancing_spigot/blob/master/LICENSE"><img src="https://img.shields.io/badge/gpl-blue?style=for-the-badge&label=license&labelColor=black"></a>
+    </span>
 </p>
 
 # ***<p align="center">Equipment balancing spigot</p>***
